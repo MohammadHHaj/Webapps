@@ -10,3 +10,16 @@
 /Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/obj/Debug/net9.0/Core.pdb
 /Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/obj/Debug/net9.0/ref/Core.dll
 /Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/obj/Debug/net9.0/Core.csproj.AssemblyReference.cache
+C:\Users\Moham\RiderProjects\Webapps\Core\bin\Debug\net9.0\Core.deps.json
+C:\Users\Moham\RiderProjects\Webapps\Core\bin\Debug\net9.0\Core.dll
+C:\Users\Moham\RiderProjects\Webapps\Core\bin\Debug\net9.0\Core.pdb
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.csproj.AssemblyReference.cache
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.AssemblyInfoInputs.cache
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.AssemblyInfo.cs
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.sourcelink.json
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.dll
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\refint\Core.dll
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\Core.pdb
+C:\Users\Moham\RiderProjects\Webapps\Core\obj\Debug\net9.0\ref\Core.dll

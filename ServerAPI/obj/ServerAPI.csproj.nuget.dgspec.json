@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/ServerAPI/ServerAPI.csproj": {}
+    "C:\\Users\\Moham\\RiderProjects\\Webapps\\ServerAPI\\ServerAPI.csproj": {}
   },
   "projects": {
-    "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj": {
+    "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj",
+        "projectUniqueName": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj",
         "projectName": "Blazor1",
-        "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj",
-        "packagesPath": "/Users/mohammadhaj/.nuget/packages/",
-        "outputPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/obj/",
+        "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj",
+        "packagesPath": "C:\\Users\\Moham\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mohammadhaj/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj": {
-                "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj"
+              "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj"
               }
             }
           }
@@ -42,7 +42,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -64,13 +64,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.1, )",
+              "version": "[9.0.2, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.1, )",
+              "version": "[9.0.2, )",
               "autoReferenced": true
             },
             "MongoDB.Driver": {
@@ -92,7 +92,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[9.0.1, 9.0.1]"
+              "version": "[9.0.2, 9.0.2]"
             }
           ],
           "frameworkReferences": {
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Moham\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -109,17 +109,17 @@
         }
       }
     },
-    "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj": {
+    "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj",
+        "projectUniqueName": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj",
-        "packagesPath": "/Users/mohammadhaj/.nuget/packages/",
-        "outputPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/obj/",
+        "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\Moham\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mohammadhaj/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -143,7 +143,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -170,21 +170,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Moham\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/ServerAPI/ServerAPI.csproj": {
+    "C:\\Users\\Moham\\RiderProjects\\Webapps\\ServerAPI\\ServerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/ServerAPI/ServerAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Moham\\RiderProjects\\Webapps\\ServerAPI\\ServerAPI.csproj",
         "projectName": "ServerAPI",
-        "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/ServerAPI/ServerAPI.csproj",
-        "packagesPath": "/Users/mohammadhaj/.nuget/packages/",
-        "outputPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/ServerAPI/obj/",
+        "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\ServerAPI\\ServerAPI.csproj",
+        "packagesPath": "C:\\Users\\Moham\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\ServerAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/mohammadhaj/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -196,11 +196,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj": {
-                "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj"
+              "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj": {
+                "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj"
               },
-              "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj": {
-                "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj"
+              "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj"
               }
             }
           }
@@ -215,7 +215,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net9.0": {
@@ -249,7 +249,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\Moham\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

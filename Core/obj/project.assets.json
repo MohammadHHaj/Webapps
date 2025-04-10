@@ -599,19 +599,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/mohammadhaj/.nuget/packages/": {}
+    "C:\\Users\\Moham\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj",
+      "projectUniqueName": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj",
-      "packagesPath": "/Users/mohammadhaj/.nuget/packages/",
-      "outputPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/obj/",
+      "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj",
+      "packagesPath": "C:\\Users\\Moham\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/mohammadhaj/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -635,7 +635,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net9.0": {
@@ -662,7 +662,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\Moham\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
