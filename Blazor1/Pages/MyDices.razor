@@ -1,0 +1,80 @@
+@page "/MyDices"
+<h3>MyDices</h3>
+
+<p>Hello, welcome to the big enterprise site for dices</p>
+
+<p id="MyPage">My name is @name</p>
+
+<p><strong>Opgave 1</strong></p>
+<p>Terning 1: @d1.getEyes()</p>
+<p>Terning 2: @d2.getEyes()</p>
+
+<p><strong>Opgave 2</strong></p>
+<p>Terning 1: <img src="@d1.GetImagePath()" alt="Terning 1" width="100" height="100"/></p>
+<p>Terning 2: <img src="@d2.GetImagePath()" alt="Terning 2" width="100" height="100"/></p>
+
+<p><strong>Opgave 3</strong></p>
+<p>Antal terninger: @numberOfDice</p>
+<button class="btn btn-secondary" @onclick="DecreaseDiceCount">-</button>
+<button class="btn btn-secondary" @onclick="IncreaseDiceCount">+</button>
+
+<div>
+    @foreach (DiceLogic dice in dices)
+    {
+        <img src="@dice.GetImagePath()" alt="Terning" class="dice-image" width="100" height="100"/>
+    }
+</div>
+
+<button class="btn btn-primary" @onclick="Roll">Click me</button>
+
+@code {
+    private readonly string name = "Mohammad";
+
+    private readonly DiceLogic d1 = new();
+    private readonly DiceLogic d2 = new();
+
+    private int numberOfDice = 2;
+    private readonly List<DiceLogic> dices = new();
+
+    public MyDices()
+    {
+        UpdateDiceList(); 
+    }
+    private void UpdateDiceList()
+    {
+        dices.Clear();
+        for (int i = 0; i < numberOfDice; i++)
+        {
+            dices.Add(new DiceLogic());
+        }
+    }
+
+    private void Roll()
+    {
+        d1.Roll();
+        d2.Roll();
+        foreach (DiceLogic dice in dices)
+        {
+            dice.Roll();
+        }
+    }
+    
+    private void IncreaseDiceCount()
+    {
+        if (numberOfDice < 6)
+        {
+            numberOfDice++;
+            UpdateDiceList();
+        }
+    }
+    
+    private void DecreaseDiceCount()
+    {
+        if (numberOfDice > 1)
+        {
+            numberOfDice--;
+            UpdateDiceList();
+        }
+    }
+
+}

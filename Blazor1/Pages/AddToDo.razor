@@ -1,0 +1,41 @@
+@page "/addtodo"
+@using Core
+@inject Blazor1.Service.TodoService todoService
+@inject NavigationManager navMan
+@using Blazor1.Components
+
+<PageTitle>Add ToDo</PageTitle>
+
+<h3>Add ToDo</h3>
+<modaldialog></modaldialog>
+<EditForm Model="@task" class="row p-3" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="col-md-12 mb-3">
+        <label for="Title">Title</label>
+        <InputText id="Title" @bind-Value="task.Title" class="form-control"/>
+    </div>
+
+    <div class="col-6 mb-3">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+
+@code {
+    ToDoItem? task = new();
+    private EditContext? aEditContext;
+
+    protected override void OnInitialized()
+    {
+        aEditContext = new EditContext(task);
+    }
+
+    public async Task HandleValidSubmit()
+    {
+        await todoService.Add(task);
+        task = new();
+        navMan.NavigateTo("todo");
+    }
+    
+
+}

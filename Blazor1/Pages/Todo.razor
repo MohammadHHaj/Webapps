@@ -1,0 +1,98 @@
+﻿@page "/todo"
+@inject Blazor1.Service.TodoService todoService
+@inject NavigationManager navManager
+@inject ILoginService lService
+@using System.Runtime.InteropServices.JavaScript
+@using Blazor1.Service.Login
+@using Core
+@inject Blazored.LocalStorage.ILocalStorageService localStore
+
+<PageTitle>ToDo</PageTitle>
+
+<h1>ToDo List</h1>
+
+@if (tasks == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <button class="btn-primary" @onclick="NavigateToAdd">Add ToDo</button>
+    <span style="color: red">@errorText</span>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ToDo</th>
+            <th>Done</th>
+            <th>Remove ToDo</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var task in tasks)
+        {
+            <tr>
+                <td>@task.Title</td>
+                <td><input type="checkbox" checked="@task.IsDone" @onchange="() => UpdateTaskStatus(task)"/></td>
+                <td>
+                    <button @onclick="() => RemoveTask(task)">&#x2718;</button>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private ToDoItem[]? tasks;
+    private string errorText = string.Empty;
+    private int currentCount = 0;
+    private const string AdminRole = "admin";
+    private User loggedIn = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var loggedInUser = await lService.GetUserLoggedIn();
+        if (loggedInUser == null)
+        {
+            navManager.NavigateTo("/LoginPage/todo");
+            return;
+        }
+
+        loggedIn = loggedInUser;
+        var c = await localStore.GetItemAsync<int>("count");
+        currentCount = c != 0 ? c : 0;
+
+        await LoadTasks();
+    }
+
+    private async Task LoadTasks()
+    {
+        tasks = await todoService.GetAll();
+    }
+
+    private void NavigateToAdd()
+    {
+        if (loggedIn.Role == AdminRole)
+        {
+            navManager.NavigateTo("addtodo");
+        }
+        else
+        {
+            navManager.NavigateTo("/LoginPage/todo");
+        }
+    }
+
+    private async Task RemoveTask(ToDoItem task)
+    {
+        await todoService.Remove(task);
+        await LoadTasks();
+    }
+
+    private async Task UpdateTaskStatus(ToDoItem task)
+    {
+        task.IsDone = !task.IsDone;
+        await todoService.Update(task);
+        await LoadTasks();
+    }
+
+}

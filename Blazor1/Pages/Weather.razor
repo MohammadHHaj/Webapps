@@ -1,0 +1,147 @@
+﻿@page "/weather"
+@inject HttpClient Http
+@using Core
+
+<PageTitle>Weather</PageTitle>
+
+<h1>Weather</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <InputNumber id="Price" @bind-Value="count" class="form-control" @oninput="UpdateCount" />
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <button class="btn btn-primary w-100" @onclick="increasecount">Tilføj 5</button>
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <button class="btn btn-danger w-100" @onclick="DecreaseCount">Fjern 5</button>
+    </div>
+</div>
+
+<p>Filtrer på temperatur:</p>
+
+<div class="row">
+    <div class="col-md-3 mb-3">
+        <InputNumber id="minTemp" @bind-Value="minTemp" class="form-control" placeholder="Min Temp" />
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <InputNumber id="maxTemp" @bind-Value="maxTemp" class="form-control" placeholder="Max Temp" />
+    </div>
+
+    <div class="col-md-3 mb-3">
+        <button class="btn btn-success w-100" @onclick="FilterForecasts">Anvend filter</button>
+    </div>
+</div>
+
+@if (filteredForecasts == null || !filteredForecasts.Any())
+{
+    <p><em>Loading or no data available...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th aria-label="Temperature">
+                Temperature (@(isCelsius ? "°C" : "°F"))
+                <button id="grader" class="top-corner" @onclick="SwitchTemperature">
+                    @(isCelsius ? "Show Fahrenheit" : "Show Celsius")
+                </button>
+            </th>
+            <th>Summary</th>
+            <th>Locations</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var forecast in filteredForecasts)
+        {
+            <tr>
+                <td>@forecast.Date.ToShortDateString()</td>
+                <td>@(isCelsius ? forecast.TemperatureC : forecast.TemperatureF)</td>
+                <td style="color:@SummaryColor(forecast.Summary);">@forecast.Summary</td>
+                <td>@forecast.locations</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private WeatherForecast[]? filteredForecasts;
+    private bool isCelsius = true;
+    private int count = 5;
+    private int? minTemp;
+    private int? maxTemp;
+    private List<WeatherForecast> allForecasts = new List<WeatherForecast>();  
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadForecasts();
+    }
+
+    private async Task LoadForecasts()
+    {
+        var newForecasts = await Http.GetFromJsonAsync<WeatherForecast[]>($"https://localhost:7005/vejr/random/{count}");
+        if (newForecasts != null)
+        {
+            allForecasts = newForecasts.ToList();
+            FilterForecasts(); 
+        }
+    }
+
+    private void SwitchTemperature()
+    {
+        isCelsius = !isCelsius;
+        FilterForecasts();
+    }
+
+    private string SummaryColor(string summary)
+    {
+        return summary.Contains("Freezing") || summary.Contains("Cool") ? "blue" :
+               summary.Contains("Hot") || summary.Contains("Warm") ? "darkred" : "green";
+    }
+
+    private async Task increasecount()
+    {
+        count += 5; 
+        await LoadForecasts();
+    }
+
+    private async Task DecreaseCount()
+    {
+        if (count > 5)  
+        {
+            count -= 5;  
+            await LoadForecasts(); 
+        }
+    }
+
+    private async Task UpdateCount(ChangeEventArgs antal)
+    {
+        if (int.TryParse(antal.Value?.ToString(), out count) && count >= 5) 
+        {
+            await LoadForecasts();
+        }
+    }
+
+    private void FilterForecasts()
+    {
+        if (allForecasts == null || allForecasts.Count == 0) return;
+
+        // Begræns antallet af forecasts til count
+        filteredForecasts = allForecasts.Take(count).Where(forecast =>
+        {
+            int temperature = isCelsius ? forecast.TemperatureC : forecast.TemperatureF;
+            return (!minTemp.HasValue || temperature >= minTemp) && (!maxTemp.HasValue || temperature <= maxTemp);
+        }).ToArray();
+
+        StateHasChanged(); 
+    }
+}

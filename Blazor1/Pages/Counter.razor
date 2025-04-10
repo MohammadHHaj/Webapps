@@ -1,0 +1,66 @@
+﻿@page "/counter"
+@inject Blazored.LocalStorage.ILocalStorageService LocalStore
+@using System.Drawing
+@using System.Security
+@using Blazor1.Components
+<PageTitle>Counter</PageTitle>
+<Dices numberOfDice="3"/>
+
+<h1>Counter</h1>
+<span>
+    <span>Current count: </span>
+    <span role="status" style="color: @(currentCount == 29 ? "red" : "black")">
+        @currentCount
+    </span>
+</span>
+
+
+<p class="random">Random number: @RandomNumber</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-secondary" @onclick="ResetButton">Reset Button</button>
+@code {
+    private int currentCount = 0;
+    Random r = new Random();
+    private int RandomNumber;
+
+    protected override async Task OnInitializedAsync()
+    {
+        DateTime lastUsed = await LocalStore.GetItemAsync<DateTime>("tt");
+        TimeSpan delta = DateTime.Now - lastUsed;
+        if (delta.TotalSeconds <= 60)
+        {
+            currentCount = await LocalStore.GetItemAsync<int>("count");
+            RandomNumber = await LocalStore.GetItemAsync<int>("count1");
+        }
+        else
+        {
+            ResetButton();
+            SaveNow();
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+        
+        RandomNumber = r.Next(currentCount);
+        LocalStore.SetItemAsync<int>("count", currentCount);
+        LocalStore.SetItemAsync<int>("count1", RandomNumber);
+        SaveNow();
+    }
+
+    private void ResetButton()
+    {
+        currentCount = 0;
+        RandomNumber = 0;
+        LocalStore.SetItemAsync<int>("count", currentCount);
+        LocalStore.SetItemAsync<int>("count1", RandomNumber);
+        SaveNow();
+    }
+
+    private void SaveNow()
+    {
+        LocalStore.SetItemAsync("tt", DateTime.Now);
+    }
+}

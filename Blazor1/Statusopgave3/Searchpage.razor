@@ -1,0 +1,102 @@
+@page "/search"
+@inject HttpClient Http
+
+<h3>SearchPage</h3>
+<div class="col-md-3 mb-3">
+    <label>Search Word</label>
+    <InputText id="Search" @bind-Value="searchlabel" class="form-control"/>
+</div>
+<div class="col-md-2 mb-3">
+    <button class="btn btn-primary w-100" @onclick="Startmed">Starter med</button>
+</div>
+<div class="col-md-2 mb-3">
+    <button class="btn btn-primary w-100" @onclick="Indeholder">Indeholder</button>
+</div>
+<div class="col-md-2 mb-3">
+    <button class="btn btn-primary w-100" @onclick="Plus10"
+            disabled="@(viewedWords == null || viewedWords.Length <= Count)">See More
+    </button>
+</div>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">@errorMessage</div>
+}
+@if (viewedWords != null && viewedWords.Length > 0)
+{
+    <ul>
+        @foreach (var w in viewedWords.Take(Count))
+        {
+            <li>@w</li>
+        }
+    </ul>
+}
+else
+{
+    <p><em>Loading or no data available...</em></p>
+}
+
+@code {
+    private string[]? allWords;
+    private string errorMessage = string.Empty;
+    private string[] viewedWords = Array.Empty<string>();
+    private int Count = 10;
+    public string searchlabel { get; set; } = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        allWords = await LoadAllWords();
+        viewedWords = allWords.Take(Count).ToArray();
+    }
+
+    private async Task<string[]> LoadAllWords()
+    {
+        string content = await Http.GetStringAsync("sampledata/words.txt");
+        return content.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+    }
+
+    private void Startmed()
+    {
+        if (!string.IsNullOrWhiteSpace(searchlabel) && allWords != null)
+        {
+            viewedWords = allWords.Where(word => word.StartsWith(searchlabel, StringComparison.OrdinalIgnoreCase)).ToArray();
+            Count = Math.Min(10, viewedWords.Length);
+            errorMessage = viewedWords.Length == 0 ? "Ingen ord starter med det søgte." : string.Empty;
+        }
+        else
+        {
+            viewedWords = Array.Empty<string>();
+            errorMessage = "Indtast et søgeord!";
+        }
+
+        StateHasChanged();
+    }
+
+    private void Indeholder()
+    {
+        if (!string.IsNullOrWhiteSpace(searchlabel) && allWords != null)
+        {
+            viewedWords = allWords.Where(word => word.Contains(searchlabel, StringComparison.OrdinalIgnoreCase)).ToArray();
+            Count = Math.Min(10, viewedWords.Length);
+            errorMessage = viewedWords.Length == 0 ? "Ingen ord indeholder det søgte." : string.Empty;
+        }
+        else
+        {
+            viewedWords = Array.Empty<string>();
+            errorMessage = "Indtast et søgeord!";
+        }
+
+        StateHasChanged();
+    }
+
+    private void Plus10()
+    {
+        if (viewedWords.Length > Count)
+        {
+            Count = Math.Min(Count + 10, viewedWords.Length);
+        }
+
+        StateHasChanged();
+    }
+
+}

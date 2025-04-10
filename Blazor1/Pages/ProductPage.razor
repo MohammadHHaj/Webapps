@@ -1,0 +1,125 @@
+@page "/product"
+@using System.Net.Http.Headers
+@using Blazor1.Model
+@using Blazor1.Components
+@inject Blazored.LocalStorage.ILocalStorageService LocalStorage
+
+
+
+<h1 class="mb-3 mt-3">Add Product</h1>
+<Modaldialog @ref="@addToDialog" Title="Tilføj nyt product">
+    <EditForm Model="@aProduct" OnValidSubmit="@HandleSubmit" class="row p-3">
+        <DataAnnotationsValidator/>
+        <ValidationSummary/>
+
+        <div class="col-md-6 mb-3">
+            <label for="Name">Name</label>
+            <InputText id="Name" @bind-Value="aProduct.Name" class="form-control"/>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="Price">Price</label>
+            <InputNumber id="Price" @bind-Value="aProduct.Price" class="form-control"/>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="Price">Stock</label>
+            <InputNumber id="Stock" @bind-Value="aProduct.Stock" class="form-control"/>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="Category">Category</label>
+            <InputSelect id="Category" @bind-Value="aProduct.Category" class="form-control">
+                @foreach (var anOption in options)
+                {
+                    <option value="@anOption">@anOption</option>
+                }
+            </InputSelect>
+
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="PublishedDate">Published Date</label>
+            <InputDate id="PublishedDate" @bind-Value="aProduct.PublishedDate" class="form-control"/>
+        </div>
+
+
+        <div class="col-md-12 mb-3">
+            <label for="Description">Description</label>
+            <InputTextArea id="Description" @bind-Value="aProduct.Description" class="form-control"/>
+        </div>
+        <div class="col-4 mb-3">
+            <label for="cb1">Is published</label>
+            <InputCheckbox id="cb1" @bind-Value="aProduct.IsPublished"/>
+        </div>
+        <div class="col-12 mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+
+    </EditForm>
+</Modaldialog>
+<table class="table table-striped">
+    <thead>
+    <tr scope="col">
+        <th>Navn</th>
+        <th>Pris</th>
+        <th>Stock</th>
+        <th>Category</th>
+        <th>Published Date</th>
+        <th>Published</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var produkt in produkter)
+    {
+        <tr>
+            <td>@produkt.Name</td>
+            <td>@produkt.Price</td>
+            <td>@produkt.Stock</td>
+            <td>@produkt.Category</td>
+            <td>@produkt.PublishedDate</td>
+            <td>@produkt.IsPublished</td>
+
+        </tr>
+    }
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" @onclick="Open">Tilføj Produkt</button>
+<span class="alert">@message</span>
+
+@code {
+    Modaldialog? addToDialog { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tmp = await LocalStorage.GetItemAsync<List<Product>>("produkter");
+        if (tmp != null)
+            produkter = tmp;
+    }
+
+    private async Task SaveItem()
+    {
+        await LocalStorage.SetItemAsync<List<Product>>("produkter", produkter);
+    }
+
+    private Product aProduct = new();
+
+    private string message = "";
+    private List<Product> produkter = new();
+
+    private async Task HandleSubmit()
+    {
+        Console.WriteLine(message);
+        produkter.Add(aProduct);
+        aProduct = new Product();
+        addToDialog.Close();
+        await SaveItem();
+    }
+
+    string[] options = { "Computer", "Audio", "Memory", "Other" };
+
+    private void Open()
+    {
+        addToDialog.Open();
+    }
+
+}
