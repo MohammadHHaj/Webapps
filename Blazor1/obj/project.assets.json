@@ -448,13 +448,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.2": {
+      "Microsoft.NET.ILLink.Tasks/9.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -1101,13 +1101,13 @@
           }
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.2": {
+      "Microsoft.NET.ILLink.Tasks/9.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
+      "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
@@ -2112,10 +2112,10 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/9.0.2": {
-      "sha512": "+KFnCLVPicEq99ko0tq+ycTvNLXHw0tImmTZjPloB/DOFLPT56KLfk5aS7wbgXRPzYhXTTBYLGaABea5mke77w==",
+    "Microsoft.NET.ILLink.Tasks/9.0.1": {
+      "sha512": "BKFAkdhUUJivAoKuSWcT23WH9E+AWQMJootzt9X+lnesOD2a2yNIe1ZQFtxB8H3ayskLBD5gYyIbj5GIfw7rZg==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/9.0.2",
+      "path": "microsoft.net.illink.tasks/9.0.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2129,7 +2129,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.9.0.2.nupkg.sha512",
+        "microsoft.net.illink.tasks.9.0.1.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -2163,10 +2163,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.2": {
-      "sha512": "svOs6YArbcpL06ZWj+b4hNVlJC5m37ydSgS+1XJWJzQu5fdT7ToEOaik1yiNo9AD357PBEiUJWTlrIcwdF8IeA==",
+    "Microsoft.NET.Sdk.WebAssembly.Pack/9.0.1": {
+      "sha512": "/+0fpalaBrtXNnoso2oIMi3W30+bDWe8lrXkRj6qKMKsTpDfJboxuVn+E9XDpuk2zTBqjd6ZDStD6F9KYMj7cQ==",
       "type": "package",
-      "path": "microsoft.net.sdk.webassembly.pack/9.0.2",
+      "path": "microsoft.net.sdk.webassembly.pack/9.0.1",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -2197,7 +2197,7 @@
         "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets",
         "build/Wasm.web.config",
         "build/browser.runtimeconfig.template.json",
-        "microsoft.net.sdk.webassembly.pack.9.0.2.nupkg.sha512",
+        "microsoft.net.sdk.webassembly.pack.9.0.1.nupkg.sha512",
         "microsoft.net.sdk.webassembly.pack.nuspec",
         "tools/net472/Microsoft.NET.Sdk.WebAssembly.Pack.Tasks.dll",
         "tools/net472/Microsoft.NET.WebAssembly.Webcil.dll",
@@ -2559,25 +2559,25 @@
       "Core >= 1.0.0",
       "Microsoft.AspNetCore.Components.WebAssembly >= 9.0.1",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 9.0.1",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.2",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.2",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.1",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 9.0.1",
       "MongoDB.Driver >= 3.3.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Moham\\.nuget\\packages\\": {}
+    "/Users/mohammadhaj/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj",
+      "projectUniqueName": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj",
       "projectName": "Blazor1",
-      "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\Blazor1.csproj",
-      "packagesPath": "C:\\Users\\Moham\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Blazor1\\obj\\",
+      "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/Blazor1.csproj",
+      "packagesPath": "/Users/mohammadhaj/.nuget/packages/",
+      "outputPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Blazor1/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Moham\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/mohammadhaj/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -2589,8 +2589,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\Moham\\RiderProjects\\Webapps\\Core\\Core.csproj"
+            "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj": {
+              "projectPath": "/Users/mohammadhaj/Desktop/it-arkitektur/ita/AppUdvikling/mappe uden navn/Webapps/Core/Core.csproj"
             }
           }
         }
@@ -2605,7 +2605,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -2627,13 +2627,13 @@
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.2, )",
+            "version": "[9.0.1, )",
             "autoReferenced": true
           },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.2, )",
+            "version": "[9.0.1, )",
             "autoReferenced": true
           },
           "MongoDB.Driver": {
@@ -2655,7 +2655,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[9.0.2, 9.0.2]"
+            "version": "[9.0.1, 9.0.1]"
           }
         ],
         "frameworkReferences": {
@@ -2663,7 +2663,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\Moham\\.dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
